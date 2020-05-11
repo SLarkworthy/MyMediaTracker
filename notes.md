@@ -1,0 +1,1 @@
+-fix up routes when all are coded
