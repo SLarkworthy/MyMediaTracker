@@ -1,17 +1,16 @@
 <h1>Add Media</h1>
 
-<%= form_for :medium do |f| %>
+<%= form_for @medium do |f| %>
     <%= f.label :name %>
-    <%= f.text_field :name
+    <%= f.text_field :name %>
 
     <%= f.label :creators %>
     <%= f.text_field :creators %>
 
-    #add categories - radio buttons?
+    <fieldset>
+        <legend>Please Choose a Category</legend>
+        <%= f.collection_radio_buttons(:category_id, Category.all, :id, :name) %>
+    </fieldset>
 
-
-    <%= f.submit "Add media" %>
+    <%= f.submit "Add medium" %>
 <% end %>
-
-
-t.integer "category_id"

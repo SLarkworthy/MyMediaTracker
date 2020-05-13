@@ -1,0 +1,12 @@
+
+
+<% Category.all.each do |cat| %>
+    <h2><%= cat.name %></h2>
+    <ul>
+    <% Medium.all.each do |medium| %>
+        <% if medium.category_id == cat.id %>
+            <li><%= medium.name %></li>
+        <% end %>
+    <% end %>
+    </ul>
+<% end %>
