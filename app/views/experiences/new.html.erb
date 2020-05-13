@@ -1,0 +1,15 @@
+<h1>Record your experience with <%= @medium.name %>!</h1>
+
+<%= form_for @experience do |f| %>
+
+    <%= f.label :notes %>
+    <%= f.text_area :notes %>
+
+    <%= f.label :rating, "Rating 1-10" %>
+    <%= f.number_field :rating, min: 1, max: 10 %>
+
+    <%= f.hidden_field :medium_id %>
+
+    <%= f.submit "Record Experience" %>
+
+<% end %>
