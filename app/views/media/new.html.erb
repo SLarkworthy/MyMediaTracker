@@ -1,0 +1,17 @@
+<h1>Add Media</h1>
+
+<%= form_for :medium do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name
+
+    <%= f.label :creators %>
+    <%= f.text_field :creators %>
+
+    #add categories - radio buttons?
+
+
+    <%= f.submit "Add media" %>
+<% end %>
+
+
+t.integer "category_id"
