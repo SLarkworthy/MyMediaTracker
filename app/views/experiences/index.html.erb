@@ -1,1 +1,4 @@
 <h1>Experience Index</h1>
+<h2><% @experiences.all.each do |experience| %>
+    <%= experience.medium.name %> - <%= experience.notes %>
+<% end %>

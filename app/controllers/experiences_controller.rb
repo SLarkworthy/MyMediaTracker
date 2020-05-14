@@ -19,6 +19,11 @@ class ExperiencesController < ApplicationController
     end
 
     def index
+        if params[:medium_id] && @medium = Medium.find_by(id: params[:medium_id])
+            @experiences = @medium.experiences
+        else
+            @experiences = Experience.all 
+        end
     end
 
     def show
