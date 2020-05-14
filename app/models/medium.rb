@@ -4,5 +4,6 @@ class Medium < ApplicationRecord
     has_many :users, through: :experiences
 
     validates :category_id, presence: true
-    validates :name, uniqueness: { scope: :creators }
+    validates :name, presence: true, uniqueness: { scope: :creators }
+    validates :creators, presence: true
 end
