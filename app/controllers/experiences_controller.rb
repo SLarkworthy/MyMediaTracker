@@ -10,10 +10,19 @@ class ExperiencesController < ApplicationController
     end
 
     def create
-        
+        @experience = current_user.experiences.build(experience_params)
+        if @experience.save
+            redirect_to experience_path(@experience)
+        else
+            render :new
+        end
     end
 
     def index
+    end
+
+    def show
+        @experience = Experience.find_by(id: params[:id])
     end
 
     private

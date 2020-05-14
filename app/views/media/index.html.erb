@@ -5,7 +5,7 @@
     <ul>
     <% Medium.all.each do |medium| %>
         <% if medium.category_id == cat.id %>
-            <li><%= medium.name %></li>
+            <li><%= medium.name %> - <%= link_to "Record your experience", new_medium_experience_path(medium.id) %></li>
         <% end %>
     <% end %>
     </ul>
