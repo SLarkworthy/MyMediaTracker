@@ -30,6 +30,27 @@ class ExperiencesController < ApplicationController
         @experience = Experience.find_by(id: params[:id])
     end
 
+    def edit
+        @medium = Medium.find_by(id: params[:medium_id])
+        if @medium
+            @experience = Experience.find_by(id: params[:id])
+        else
+            redirect_to media_path
+        end
+    end
+
+    def update
+        @experience = Experience.find_by(id: params[:id])
+        if @experience.update(experience_params)
+            redirect_to experience_path(@experience)
+        else
+            render :edit
+        end
+    end
+
+    def destroy
+    end
+
     private
 
     def experience_params

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete '/logout' => 'sessions#destroy'
   resources :categories
   resources :media do 
-    resources :experiences, only: [:new, :index]
+    resources :experiences, only: [:new, :index, :edit]
   end
   resources :experiences
   resources :users

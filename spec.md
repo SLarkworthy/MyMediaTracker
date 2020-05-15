@@ -23,6 +23,22 @@ Confirm:
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
 
-Notes:
+Notes for the end:
 -trim routes
 -add fields_with_errors
+
+
+Work on these!!!
+-full CRUD ability with experiences
+-add scope methods for favorite shows 
+-add scope methods for comparing two users
+-add omni-auth (google?)
+-add styling
+-make a good nav bar
+-make more seeds and fix case of current category seeds
+-alphabatize media show page
+-add before actions in controller
+
+stretch goals:
+-let people add a media from their profile page
+-let people add a category with a nested form

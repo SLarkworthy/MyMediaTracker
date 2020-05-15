@@ -1,11 +1,16 @@
-
+<h1>All Media Added</h1>
 
 <% Category.all.each do |cat| %>
     <h2><%= cat.name %></h2>
     <ul>
     <% Medium.all.each do |medium| %>
         <% if medium.category_id == cat.id %>
-            <li><%= medium.name %> - <%= link_to "Record your experience", new_medium_experience_path(medium.id) %></li>
+            <li><%= medium.name %> - 
+            <% if !current_user.media.include?(medium) %>
+                <%= link_to "Record your experience", new_medium_experience_path(medium.id) %></li>
+            <% else %>
+                <%= link_to "Update your experience", edit_medium_experience_path(medium, current_user.experiences.find_by(medium_id: medium.id)) %></li>
+            <% end %>
         <% end %>
     <% end %>
     </ul>
