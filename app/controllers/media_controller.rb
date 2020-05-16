@@ -20,7 +20,7 @@ class MediaController < ApplicationController
     private
 
     def medium_params
-        params.require(:medium).permit(:name, :creators, :category_id)
+        params.require(:medium).permit(:name, :creators, :category_id, :experiences_attributes=>[:notes, :rating, :user_id, :medium_id])
     end
 
 end

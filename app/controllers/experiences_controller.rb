@@ -5,7 +5,7 @@ class ExperiencesController < ApplicationController
         if @medium
             @experience = @medium.experiences.build
         else
-            redirect_to media_path
+            @experience = Experience.new
         end
     end
 
