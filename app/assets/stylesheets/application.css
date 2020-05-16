@@ -13,3 +13,42 @@
  *= require_tree .
  *= require_self
  */
+
+ a {
+    color: black;
+  }
+  a:hover {
+    font-weight: bold;
+  }
+
+  div.field_with_errors input {
+    border-color: red;
+    border-width: 1px;
+    border-style: solid;
+  }
+  div#error_explanation {
+      color: red;
+      font-style: italic;
+  }
+  div#error_explanation h2 {
+    color: red;
+  }
+
+main {
+    background-color: rgb(228, 226, 226);
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+nav {
+    background-color: lightseagreen;
+    padding: 10px;
+}
+
+h1, h2 {
+    color: rgb(211, 89, 44);
+}
+
+* {
+    font-family: sans-serif;
+}

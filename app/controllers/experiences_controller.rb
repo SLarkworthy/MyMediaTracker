@@ -49,6 +49,8 @@ class ExperiencesController < ApplicationController
     end
 
     def destroy
+        Experience.find_by(id: params[:id]).destroy
+        redirect_to user_path(current_user)
     end
 
     private

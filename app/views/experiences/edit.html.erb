@@ -1,3 +1,5 @@
 <h1>Edit your experience with <%= @experience.medium.name %>!</h1>
 
 <%= render 'form' %>
+
+<%= button_to "Delete Experience", experience_path(@experience), method: :delete, data: { confirm: "This will delete your experience and notes" } %>

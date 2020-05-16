@@ -26,10 +26,10 @@ Confirm:
 Notes for the end:
 -trim routes
 -add fields_with_errors
+-refactor, especially media index page
 
 
 Work on these!!!
--full CRUD ability with experiences
 -add scope methods for favorite shows 
 -add scope methods for comparing two users
 -add omni-auth (google?)
@@ -38,6 +38,7 @@ Work on these!!!
 -make more seeds and fix case of current category seeds
 -alphabatize media show page
 -add before actions in controller
+-add validation so user cannot add multiple experiences to one media
 
 stretch goals:
 -let people add a media from their profile page
