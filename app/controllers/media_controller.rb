@@ -14,7 +14,7 @@ class MediaController < ApplicationController
     end
 
     def index
-        @media = Medium.all
+        @media = Medium.alphabetical
     end
 
     private

@@ -1,1 +1,9 @@
 <%= @user.username %> show page
+
+<%= render 'media/category_organizer' do |cat| %>
+    <% @media.each do |medium| %>
+        <% if medium.category_id == cat.id %>
+            <li><%= medium.name %> - <%= link_to "See my experience", experience_path(@user.experiences.find_by(medium_id: medium.id)) %>
+        <% end %>
+    <% end %>
+<% end %>

@@ -31,7 +31,6 @@ Notes for the end:
 
 Work on these!!!
 -add scope methods for favorite shows 
--add scope methods for comparing two users
 -add omni-auth (google?)
 -add styling
 -make a good nav bar
@@ -39,7 +38,9 @@ Work on these!!!
 -alphabatize media show page
 -add before actions in controller
 -add validation so user cannot add multiple experiences to one media
+-make a nested form - either to add a category or on the user show page
 
 stretch goals:
 -let people add a media from their profile page
 -let people add a category with a nested form
+-add scope methods for comparing two users

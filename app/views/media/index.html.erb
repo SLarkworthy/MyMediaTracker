@@ -1,9 +1,7 @@
 <h1>All Media</h1>
 
-<% Category.all.each do |cat| %>
-    <h2><%= cat.name %></h2>
-    <ul>
-    <% Medium.all.each do |medium| %>
+<%= render 'category_organizer' do |cat| %>
+    <% @media.each do |medium| %>
         <% if medium.category_id == cat.id %>
             <li><%= medium.name %> - 
             <% if !current_user.media.include?(medium) %>
@@ -13,5 +11,4 @@
             <% end %>
         <% end %>
     <% end %>
-    </ul>
 <% end %>
