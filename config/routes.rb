@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/signup' => 'users#new'
   delete '/logout' => 'sessions#destroy'
+  get '/users/:id/favorites' => 'users#favorites'
   resources :categories
   resources :media do 
     resources :experiences, only: [:new, :index, :edit]

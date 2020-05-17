@@ -30,7 +30,6 @@ Notes for the end:
 
 
 Work on these!!!
--add scope methods for favorite shows 
 -add omni-auth (google?)
 -add styling
 -make a good nav bar

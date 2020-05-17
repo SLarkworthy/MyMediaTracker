@@ -17,13 +17,18 @@ class UsersController < ApplicationController
     def show
         @user = User.find_by(id: params[:id])
         if params[:favorites] == "See my favorite media!"
-            @media = Medium.user_favorites(params[:id])
+           redirect_to "/users/#{params[:id]}/favorites"
         else
             @media = Medium.user_medium(params[:id])
         end
         redirect_to '/' if !@user
     end
 
+    def favorites
+        @user = User.find_by(id: params[:id])
+        @media = Medium.user_favorites(params[:id])
+        render 'show'
+    end
 
     private
     def user_params
