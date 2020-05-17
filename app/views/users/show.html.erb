@@ -1,4 +1,10 @@
-<%= @user.username %> show page
+<h1><%= @user.username %>'s Media!</h1>
+
+<h3>Filter posts:</h3>
+  <%= form_tag(user_path(@user), method: "get") do %>
+    <%= select_tag "favorites", options_for_select(["See my favorite media!"]), include_blank: true %>
+    <%= submit_tag "Filter" %>
+  <% end %>
 
 <%= render 'media/category_organizer' do |cat| %>
     <% @media.each do |medium| %>
