@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   delete '/logout' => 'sessions#destroy'
   get '/users/:id/favorites' => 'users#favorites'
+
+  get '/auth/:provider/callback' => 'sessions#create'
+
   resources :categories
   resources :media do 
     resources :experiences, only: [:new, :index, :edit]
