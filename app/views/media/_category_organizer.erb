@@ -1,6 +1,7 @@
+<div class="all_media">
 <% Category.all.each do |cat| %>
-    <h2><%= cat.name %></h2>
+    <div class="cat_media"><h2><%= cat.name %></h2>
     <ul>
     <%= yield(cat) %>
-    </ul>
-<% end %>
+    </ul></div>
+<% end %></div>

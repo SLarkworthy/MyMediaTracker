@@ -1,14 +1,13 @@
 <h1>All Media</h1>
 
+<div class="all_media">
 <%= render 'category_organizer' do |cat| %>
-    <% @media.each do |medium| %>
-        <% if medium.category_id == cat.id %>
-            <li><%= medium.name %> - 
-            <% if !current_user.media.include?(medium) %>
-                <%= link_to "Record your experience", new_medium_experience_path(medium.id) %></li>
-            <% else %>
-                <%= link_to "Update your experience", edit_medium_experience_path(medium, current_user.experiences.find_by(medium_id: medium.id)) %></li>
-            <% end %>
+    <% cat.media.each do |medium| %>
+        <% if !current_user.media.include?(medium) %>
+            <li class="unseen"><%= medium.name %> - <%= link_to "Record your experience", new_medium_experience_path(medium.id) %></li>
+        <% else %>
+            <li class="seen"><%= medium.name %> - <%= link_to "Update your experience", edit_medium_experience_path(medium, current_user.experiences.find_by(medium_id: medium.id)) %></li>
         <% end %>
     <% end %>
 <% end %>
+</div>

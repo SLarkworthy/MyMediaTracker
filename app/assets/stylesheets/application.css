@@ -14,11 +14,31 @@
  *= require_self
  */
 
+ @media screen and (min-width: 960px) {
+ 
+  main {
+    justify-content: center;
+  }
+  div.cat_media {
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  form {
+    text-align: center;
+  }
+ }
+
+
  a {
     color: black;
   }
   a:hover {
     font-weight: bold;
+    font-size: 110%;
+    line-height: 100%;
   }
 
   div.field_with_errors input {
@@ -37,18 +57,110 @@
 main {
     background-color: rgb(228, 226, 226);
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     padding-left: 10px;
+    margin-top: 50px;
 }
 
 nav {
     background-color: lightseagreen;
     padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 
 h1, h2 {
     color: rgb(211, 89, 44);
 }
 
-* {
+h1 {
+  font-size: 50px;
+  text-align: center;
+  font-family: Roboto;
+  font-style: italic;
+}
+
+
+body {
     font-family: sans-serif;
+}
+
+
+ul {
+  list-style: none; /* Remove default bullets */
+}
+
+ul li.unseen > a {
+  font-weight: bold;
+}
+
+ul li.seen::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: black; /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+ul li.unseen::before {
+  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: rgb(172, 172, 172); /* Change the color */
+  font-weight: bold; /* If you want it to be bold */
+  display: inline-block; /* Needed to add space between the bullet and the text */
+  width: 1em; /* Also needed for space (tweak if needed) */
+  margin-left: -1em; /* Also needed for space (tweak if needed) */
+}
+
+input[type=text] {
+  width: 50%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+
+input[type=number] {
+  border-radius: 4px;
+  width: 40px;
+}
+
+fieldset {
+  border-radius: 4px;
+}
+
+textarea {
+  width: 50%;
+  height: 150px;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #f8f8f8;
+  resize: none;
+}
+
+input[type=submit] {
+  padding: 12px 24px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+input[value="Delete Experience"]{
+  color: red;
+  float: right;
+  margin-top: 10px;
+  margin-right: 5px;
+  padding: 8px 16px;
+}
+
+input[value="Filter"] {
+  padding: 6px 24px;
+}
+
+select {
+  padding: 7px 16px;
 }

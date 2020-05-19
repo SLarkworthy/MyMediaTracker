@@ -3,11 +3,11 @@
 <%= render partial: '/layouts/errors', locals: {object: @medium} %>
 
 <%= form_for @medium do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %><br>
 
-    <%= f.label :creators %>
-    <%= f.text_field :creators %>
+    <%= f.label :creators %><br>
+    <%= f.text_field :creators %><br>
 
     <fieldset>
         <legend>Please Choose a Category</legend>
@@ -20,11 +20,11 @@
         <%= e.hidden_field :medium_id, value: @medium.id %>
         <%= e.hidden_field :user_id, value: current_user.id %>
 
-        <%= e.label :notes %>
-        <%= e.text_area :notes %>
-
         <%= e.label :rating, "Rating 1-10" %>
-        <%= e.number_field :rating, min: 1, max: 10 %>
+        <%= e.number_field :rating, min: 1, max: 10 %><br>
+
+        <%= e.label :notes %><br>
+        <%= e.text_area :notes %><br>
 
     <% end %>
 
