@@ -4,10 +4,11 @@
 <%= render 'category_organizer' do |cat| %>
     <% cat.media.each do |medium| %>
         <% if !current_user.media.include?(medium) %>
-            <li class="unseen"><%= medium.name %> - <%= link_to "Record your experience", new_medium_experience_path(medium.id) %></li>
+            <li class="unseen"><%= medium.name %> - <%= medium.creators%><br><%= link_to "Record", new_medium_experience_path(medium.id) %>
         <% else %>
-            <li class="seen"><%= medium.name %> - <%= link_to "Update your experience", edit_medium_experience_path(medium, current_user.experiences.find_by(medium_id: medium.id)) %></li>
+            <li class="seen"><%= medium.name %> - <%= medium.creators%><br><%= link_to "Update", edit_medium_experience_path(medium, current_user.experiences.find_by(medium_id: medium.id)) %>
         <% end %>
+         OR <%= link_to "See experiences", medium_experiences_path(medium) %></li><br>
     <% end %>
 <% end %>
 </div>

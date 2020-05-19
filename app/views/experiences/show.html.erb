@@ -1,9 +1,10 @@
+
 <h1>Your <%= @experience.medium.name %> experience!</h1>
-
+<%= link_to "Add more notes or change your rating!", edit_medium_experience_path(@experience.medium, @experience) %><br>
+<%= link_to "See more experiences for this medium", medium_experiences_path(@experience.medium) %><br>
 <div class="rating">
-    <p><strong><%= @experience.rating %>/10</strong></p>
+    <p class="rating"><strong><%= @experience.rating %>/10</strong></p>
 </div>
-<p><%= @experience.notes %></p>
+<p><%= @experience.notes %></p><br>
 
-<%= link_to "Add more notes or change your rating!", edit_medium_experience_path(@experience.medium, @experience) %>
 

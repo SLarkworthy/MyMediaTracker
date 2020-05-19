@@ -18,7 +18,5 @@ class Medium < ApplicationRecord
     def self.user_favorites(id_of_user)
         joins(:users, :experiences).where(experiences:{user_id: id_of_user, rating: 10}).distinct
     end
-
-    
     
 end

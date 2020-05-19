@@ -164,3 +164,12 @@ input[value="Filter"] {
 select {
   padding: 7px 16px;
 }
+
+p {
+  white-space: pre-wrap;
+}
+
+p.rating {
+  font-size: 40px;
+  text-align: center;
+}

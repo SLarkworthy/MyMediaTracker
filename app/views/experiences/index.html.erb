@@ -1,4 +1,8 @@
-<h1>Experience Index</h1>
-<h2><% @experiences.all.each do |experience| %>
-    <%= experience.medium.name %> - <%= experience.notes %>
+<h1>Explore some experiences!</h1>
+<ul>
+<% @experiences.all.each do |experience| %>
+    <% if experience.explorable %>
+        <li><p><%= link_to experience.user.username, user_path(experience.user) %> <%= experience.verb %> <%= experience.medium.name %> - <%= link_to "See full experience!", experience_path(experience) %></li> 
+    <% end %>
 <% end %>
+</ul>

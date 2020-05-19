@@ -9,4 +9,19 @@ class Experience < ApplicationRecord
      }
 
      validates :medium_id, uniqueness: { scope: :user_id, message: "You've already experienced this!"}
+
+     def explorable
+        self.rating.present? && self.notes.present?
+     end
+     def verb
+        if self.rating == 1
+            "HATED"
+        elsif self.rating <= 5
+            "disliked"
+        elsif self.rating <= 9
+            "liked"
+        elsif self.rating == 10
+            "LOVED"
+        end
+     end
 end
