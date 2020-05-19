@@ -1,9 +1,13 @@
 
-<h1>Your <%= @experience.medium.name %> experience!</h1>
-<%= link_to "Add more notes or change your rating!", edit_medium_experience_path(@experience.medium, @experience) %><br>
+<h1><%= @experience.user.username %>'s <%= @experience.medium.name %> experience!</h1>
+<% if authorized_to_edit %>
+    <%= link_to "Add more notes or change your rating!", edit_medium_experience_path(@experience.medium, @experience) %><br>
+<% end %>
 <%= link_to "See more experiences for this medium", medium_experiences_path(@experience.medium) %><br>
 <div class="rating">
+<% if @experience.rating %>
     <p class="rating"><strong><%= @experience.rating %>/10</strong></p>
+<% end %>
 </div>
 <p><%= @experience.notes %></p><br>
 

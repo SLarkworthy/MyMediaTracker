@@ -1,11 +1,15 @@
 class ExperiencesController < ApplicationController
 
+    before_action :require_login, only: [:new, :create, :edit, :update, :destroy]
+    before_action :set_experience, only: [:show, :edit, :update, :destroy]
+    helper_method :authorized_to_edit
+
     def new
         @medium = Medium.find_by(id: params[:medium_id])
         if @medium
             @experience = @medium.experiences.build
         else
-            @experience = Experience.new
+            redirect_to media_path
         end
     end
 
@@ -27,20 +31,17 @@ class ExperiencesController < ApplicationController
     end
 
     def show
-        @experience = Experience.find_by(id: params[:id])
     end
 
     def edit
         @medium = Medium.find_by(id: params[:medium_id])
-        if @medium
-            @experience = Experience.find_by(id: params[:id])
-        else
+        unless @medium && @experience && authorized_to_edit
             redirect_to media_path
         end
     end
 
     def update
-        @experience = Experience.find_by(id: params[:id])
+        redirect_to media_path unless authorized_to_edit
         if @experience.update(experience_params)
             redirect_to experience_path(@experience)
         else
@@ -49,7 +50,8 @@ class ExperiencesController < ApplicationController
     end
 
     def destroy
-        Experience.find_by(id: params[:id]).destroy
+        redirect_to media_path unless authorized_to_edit
+        @experience.destroy
         redirect_to user_path(current_user)
     end
 
@@ -58,4 +60,13 @@ class ExperiencesController < ApplicationController
     def experience_params
         params.require(:experience).permit(:notes, :rating, :medium_id)
     end
+
+    def authorized_to_edit
+        current_user == @experience.user 
+    end
+
+    def set_experience
+        @experience = Experience.find_by(id: params[:id])
+    end
+    
 end

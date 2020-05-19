@@ -1,5 +1,7 @@
 class MediaController < ApplicationController
 
+    before_action :require_login, only: [:new, :create]
+
     def new
         @medium = Medium.new
     end

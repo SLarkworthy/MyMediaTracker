@@ -41,8 +41,6 @@ Work on these!!!
 -add styling
 -make a good nav bar
 -add before actions in controller
--add 'see other experiences' link in the nav bar - this links to '/experiences' and shows ALL of them, with links to see just the experiences for one medium
--add a link to see more experiences for a medium in the experience show page 
 -add creators to the media index page
 
 

@@ -24,4 +24,5 @@ class Experience < ApplicationRecord
             "LOVED"
         end
      end
+
 end
