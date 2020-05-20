@@ -9,9 +9,7 @@ class Medium < ApplicationRecord
     validates :name, presence: true, uniqueness: { scope: :creators }
     validates :creators, presence: true
 
-    def self.alphabetical
-        order(:name)
-    end
+    scope :alphabetical, -> { order(:name) }
     def self.user_medium(id_of_user)
         joins(:users, :experiences).where(experiences:{user_id: id_of_user}).distinct
     end

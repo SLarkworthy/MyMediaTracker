@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user, :logged_in?
+    helper_method :current_user, :logged_in?, :categories
 
     private
     
@@ -14,6 +14,10 @@ class ApplicationController < ActionController::Base
 
     def require_login
         return head(:forbidden) unless logged_in?
+    end
+
+    def categories
+        Category.all 
     end
 
 end

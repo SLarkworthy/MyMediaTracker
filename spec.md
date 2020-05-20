@@ -19,28 +19,20 @@ Specs:
 - [x] Include signup (how e.g. Devise)
 - [x] Include login (how e.g. Devise)
 - [x] Include logout (how e.g. Devise)
+    Users can signup, login, and logout. Passwords are encrypted and authenticated with the bcrypt gem.
 - [x] Include third party signup/login (how e.g. Devise/OmniAuth)
+    Users can sign in with google.
 - [x] Include nested resource show or index (URL e.g. users/2/recipes)
+    experiences is nested under media, so media/1/experiences is an example of this.
 - [x] Include nested resource "new" form (URL e.g. recipes/1/ingredients/new)
+    I have media/1/experiences/new and also edit.
 - [x] Include form display of validation errors (form URL e.g. /recipes/new)
+    A list of errors will appear at the top of the page when a user fills out an invalid form, and field_with_errors is used in CSS to add a red border around improperly filled fields.
 
 Confirm:
-- [ ] The application is pretty DRY
-- [ ] Limited logic in controllers
-- [ ] Views use helper methods if appropriate
-- [ ] Views use partials if appropriate
-
-Notes for the end:
--trim routes
--refactor, especially media index page
--improve user flow
-
-
-Work on these!!!
-
--add styling
--make a good nav bar
--add before actions in controller
--add creators to the media index page
+- [x] The application is pretty DRY
+- [x] Limited logic in controllers
+- [x] Views use helper methods if appropriate
+- [x] Views use partials if appropriate
 
 
