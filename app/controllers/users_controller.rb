@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+    before_action :set_user, only: [:favorite, :show]
+    helper_method :my_profile?
+
     def new
         @user = User.new
     end
@@ -15,7 +18,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(id: params[:id])
         if params[:favorites] == "See my favorite media!"
            redirect_to "/users/#{params[:id]}/favorites"
         else
@@ -25,7 +27,6 @@ class UsersController < ApplicationController
     end
 
     def favorites
-        @user = User.find_by(id: params[:id])
         @media = Medium.user_favorites(params[:id])
         render 'show'
     end
@@ -33,6 +34,14 @@ class UsersController < ApplicationController
     private
     def user_params
         params.require(:user).permit(:username, :email, :password)
+    end
+
+    def set_user
+        @user = User.find_by(id: params[:id])
+    end
+
+    def my_profile?
+        @user == current_user
     end
 
 end

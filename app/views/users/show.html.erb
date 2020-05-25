@@ -1,5 +1,7 @@
 <h1><%= @user.username %>'s Media!</h1>
 
+<p class="instructions"><%= link_to "See all media", media_path %> to get started recording experiences! Media you record an experience will appear on this page!</p>
+
 <%= form_tag(user_path(@user), method: "get") do %>
   <%= select_tag "favorites", options_for_select(["See my favorite media!"]), include_blank: true %>
   <%= submit_tag "Filter" %>
@@ -8,7 +10,7 @@
 <%= render 'media/category_organizer' do |cat| %>
     <% @media.each do |medium| %>
         <% if medium.category_id == cat.id %>
-            <li class="seen"><%= medium.name %> - <%= link_to "See my experience", experience_path(@user.experiences.find_by(medium_id: medium.id)) %>
+            <li class="seen"><%= medium.name %> - <%= link_to "See my experience", experience_path(@user.find_experience_by_medium_id(medium.id)) %>
         <% end %>
     <% end %>
 <% end %>
