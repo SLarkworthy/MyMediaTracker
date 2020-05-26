@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    before_action :set_user, only: [:favorite, :show]
+    before_action :set_user, only: [:favorites, :show]
     helper_method :my_profile?
 
     def new

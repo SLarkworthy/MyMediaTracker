@@ -1,6 +1,8 @@
 <h1><%= @user.username %>'s Media!</h1>
 
-<p class="instructions"><%= link_to "See all media", media_path %> to get started recording experiences! Media you record an experience will appear on this page!</p>
+<% if my_profile? %>
+    <p class="instructions"><%= link_to "See all media", media_path %> to get started recording experiences! Media you record an experience for will appear on this page!</p>
+<% end %>
 
 <%= form_tag(user_path(@user), method: "get") do %>
   <%= select_tag "favorites", options_for_select(["See my favorite media!"]), include_blank: true %>

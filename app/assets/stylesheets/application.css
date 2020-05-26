@@ -89,7 +89,7 @@ body {
 
 
 ul {
-  list-style: none; /* Remove default bullets */
+  list-style: none;
 }
 
 ul li.unseen > a {
@@ -97,21 +97,21 @@ ul li.unseen > a {
 }
 
 ul li.seen::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: black; /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  content: "\2022";  /* unicode for a bullet */
+  color: black;
+  font-weight: bold; 
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em; 
 }
 
 ul li.unseen::before {
-  content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: rgb(172, 172, 172); /* Change the color */
-  font-weight: bold; /* If you want it to be bold */
-  display: inline-block; /* Needed to add space between the bullet and the text */
-  width: 1em; /* Also needed for space (tweak if needed) */
-  margin-left: -1em; /* Also needed for space (tweak if needed) */
+  content: "\2022";  
+  color: rgb(172, 172, 172); 
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em; 
+  margin-left: -1em; 
 }
 
 input[type=text] {
@@ -200,4 +200,11 @@ p.welcome {
 a[rel="nofollow"] {
  float: right;
  margin-right: 40px;
+}
+
+p.instructions {
+  font-style: italic;
+  color: rgb(70, 70, 70);
+  margin-top: -20px;
+  margin-bottom: 50px;
 }
