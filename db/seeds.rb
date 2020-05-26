@@ -15,6 +15,12 @@ media = Medium.create([
     {name: "Up", creators: "Pixar Animation Studios", category_id: 2},
     {name: "Snowpiercer", creators: "Bong Joon-ho, Bong and Kelly Masterson", category_id: 2},
     {name: "She-Ra and the Princesses of Power", creators: "Noelle Stevenson, DreamWorks Animation Television", category_id: 5},
-    {name: "Brooklyn Nine-Nine", creators: "Dan Goor and Michael Schur", category_id: 4}
+    {name: "Brooklyn Nine-Nine", creators: "Dan Goor and Michael Schur", category_id: 4},
+
+    {name: "My Hero Academia", creators: "Kōhei Horikoshi", category_id: 6}, 
+    {name: "Monthly Girls' Nozaki-kun", creators: "Izumi Tsubaki", category_id: 6},
+    {name: "Soul Eater", creators: "Atsushi Ōkubo, Bones Inc", category_id: 3},
+    {name: "The Mirror Visitor Quartet", creators: "Christelle Dabos", category_id: 1},
+    {name: "Sense and Sensibility", creators: "Jane Austen", category_id: 1}
 ])
 

@@ -1,7 +1,7 @@
 <h1><%= @user.username %>'s Media!</h1>
 
 <% if my_profile? %>
-    <p class="instructions"><%= link_to "See all media", media_path %> to get started recording experiences! Media you record an experience for will appear on this page!</p>
+    <p class="instructions">Record an experience to see that medium on this page! <%= link_to "See all media", media_path %> to get started recording experiences!</p>
 <% end %>
 
 <%= form_tag(user_path(@user), method: "get") do %>
