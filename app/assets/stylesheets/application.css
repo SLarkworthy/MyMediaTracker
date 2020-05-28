@@ -42,9 +42,8 @@
   }
 
   div.field_with_errors input {
-    border-color: red;
+    border: red solid;
     border-width: 1px;
-    border-style: solid;
   }
   div#error_explanation {
       color: red;
@@ -208,3 +207,12 @@ p.instructions {
   margin-top: -20px;
   margin-bottom: 50px;
 }
+
+div.field_with_errors > fieldset {
+  border: 1px red solid;
+}
+
+fieldset > div {
+  display: inline-block;
+}
+

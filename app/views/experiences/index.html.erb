@@ -1,6 +1,6 @@
 <h1>Explore some experiences!</h1>
 <ul>
-<% @experiences.all.each do |experience| %>
+<% @experiences.each do |experience| %>
     <% if experience.explorable %>
         <li><p><%= link_to experience.user.username, user_path(experience.user) %> <%= experience.verb %> <%= experience.medium.name %> - <%= link_to "See full experience!", experience_path(experience) %></li> 
     <% end %>

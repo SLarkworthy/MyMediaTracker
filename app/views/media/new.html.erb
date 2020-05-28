@@ -9,10 +9,12 @@
     <%= f.label :creators %><br>
     <%= f.text_field :creators %><br>
 
+    <div class="field<%= ' field_with_errors' if @medium.errors[:category].any? %>">
     <fieldset>
         <legend>Please Choose a Category</legend>
         <%= f.collection_radio_buttons(:category_id, Category.all, :id, :name) %>
     </fieldset>
+    </div>
 
     <h2>What was your experience?</h2>
     <%= f.fields_for :experiences, @medium.experiences.build do |e| %>
