@@ -2,6 +2,8 @@
 # MYMEDIATRACKER app
 My first ever rails project!
 # DESCRIPTION
+Link to hosted: https://mymediatracker5000.herokuapp.com/
+
 This app was built to allow users to keep track of the movies, tv shows, anime, books, etc. that they have experienced. Users can send their list to friends to compare and contrast, acting as a conversation starter and helping them get to know each other. Users can also filter this list to see just their favorite media, rated 10/10. If the database does not have a medium you have experienced, it can be added easily.
 ## Installation
 1. Fork and clone this repository then execute
